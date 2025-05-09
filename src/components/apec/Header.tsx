@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
@@ -22,7 +21,7 @@ const Header = () => {
   }, [scrolled]);
 
   return (
-    <header 
+    <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
@@ -31,12 +30,14 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <div className="flex items-center">
-              <div className="bg-gradient-to-r from-marketing-purple to-marketing-pink h-8 w-8 rounded-lg flex items-center justify-center mr-2 shadow-sm">
+              <div className="bg-gradient-to-r from-primary to-secondary h-8 w-8 rounded-lg flex items-center justify-center mr-2 shadow-sm">
                 <span className="text-white font-bold text-lg">A</span>
               </div>
               <div>
                 <span className="text-2xl font-bold gradient-text">АТЭС</span>
-                <span className="text-2xl ml-1 text-muted-foreground">карта</span>
+                <span className="text-2xl ml-1 text-muted-foreground">
+                  карта
+                </span>
               </div>
             </div>
           </div>
@@ -52,11 +53,15 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm" className="border-primary text-primary">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-primary text-primary"
+            >
               <Icon name="LogIn" className="mr-2 h-4 w-4" />
               Войти
             </Button>
-            <Button className="bg-gradient-to-r from-marketing-purple to-marketing-deepBlue hover:from-marketing-deepBlue hover:to-marketing-purple shadow-marketing">
+            <Button className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary shadow-lg">
               <Icon name="MessageCircle" className="mr-2 h-4 w-4" />
               Консультация
             </Button>
@@ -67,9 +72,9 @@ const Header = () => {
             className="md:hidden flex items-center"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <Icon 
-              name={menuOpen ? "X" : "Menu"} 
-              className="h-6 w-6 text-primary" 
+            <Icon
+              name={menuOpen ? "X" : "Menu"}
+              className="h-6 w-6 text-primary"
             />
           </button>
         </div>
@@ -78,19 +83,37 @@ const Header = () => {
         {menuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-20 border-t">
             <div className="py-4 px-6 space-y-4">
-              <MobileNavLink href="#" onClick={() => setMenuOpen(false)}>Главная</MobileNavLink>
-              <MobileNavLink href="#advantages" onClick={() => setMenuOpen(false)}>Преимущества</MobileNavLink>
-              <MobileNavLink href="#countries" onClick={() => setMenuOpen(false)}>Страны</MobileNavLink>
-              <MobileNavLink href="#process" onClick={() => setMenuOpen(false)}>Процесс</MobileNavLink>
-              <MobileNavLink href="#pricing" onClick={() => setMenuOpen(false)}>Тарифы</MobileNavLink>
-              <MobileNavLink href="#apply" onClick={() => setMenuOpen(false)}>Оформление</MobileNavLink>
-              
+              <MobileNavLink href="#" onClick={() => setMenuOpen(false)}>
+                Главная
+              </MobileNavLink>
+              <MobileNavLink
+                href="#advantages"
+                onClick={() => setMenuOpen(false)}
+              >
+                Преимущества
+              </MobileNavLink>
+              <MobileNavLink
+                href="#countries"
+                onClick={() => setMenuOpen(false)}
+              >
+                Страны
+              </MobileNavLink>
+              <MobileNavLink href="#process" onClick={() => setMenuOpen(false)}>
+                Процесс
+              </MobileNavLink>
+              <MobileNavLink href="#pricing" onClick={() => setMenuOpen(false)}>
+                Тарифы
+              </MobileNavLink>
+              <MobileNavLink href="#apply" onClick={() => setMenuOpen(false)}>
+                Оформление
+              </MobileNavLink>
+
               <div className="pt-4 flex flex-col space-y-3">
                 <Button variant="outline" className="w-full justify-start">
                   <Icon name="LogIn" className="mr-2 h-4 w-4" />
                   Войти
                 </Button>
-                <Button className="w-full justify-start bg-gradient-to-r from-marketing-purple to-marketing-deepBlue">
+                <Button className="w-full justify-start bg-gradient-to-r from-primary to-secondary">
                   <Icon name="MessageCircle" className="mr-2 h-4 w-4" />
                   Консультация
                 </Button>

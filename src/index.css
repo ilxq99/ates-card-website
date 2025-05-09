@@ -117,19 +117,19 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-marketing-purple to-marketing-pink;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 
   .marketing-button {
-    @apply relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-primary-foreground transition-all duration-300 ease-out rounded-md bg-gradient-to-r from-marketing-purple to-marketing-deepBlue hover:from-marketing-deepBlue hover:to-marketing-purple shadow-marketing hover:shadow-marketing-hover;
+    @apply relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-primary-foreground transition-all duration-300 ease-out rounded-md bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary shadow-lg;
   }
 
   .accent-button {
-    @apply relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-primary-foreground transition-all duration-300 ease-out rounded-md bg-gradient-to-r from-marketing-pink to-accent hover:from-accent hover:to-marketing-pink shadow-marketing-pink;
+    @apply relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-primary-foreground transition-all duration-300 ease-out rounded-md bg-gradient-to-r from-accent to-accent hover:from-accent hover:to-accent shadow-lg;
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-marketing-hover hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
 
   .section-title {
