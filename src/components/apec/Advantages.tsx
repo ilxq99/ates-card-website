@@ -1,7 +1,6 @@
 
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
-import { motion } from "framer-motion";
 
 const Advantages = () => {
   return (
@@ -39,12 +38,8 @@ const Advantages = () => {
             </div>
           </div>
           
-          <motion.div 
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="order-1 lg:order-2 relative"
+          <div 
+            className="order-1 lg:order-2 relative animate-fade-in-scale"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-2xl blur-2xl transform rotate-3 scale-95 opacity-70"></div>
             <div className="relative">
@@ -79,7 +74,7 @@ const Advantages = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
         
         {/* Дополнительный блок с преимуществами */}
@@ -113,12 +108,9 @@ interface AdvantageItemProps {
 
 const AdvantageItem = ({ title, description, index }: AdvantageItemProps) => {
   return (
-    <motion.div 
-      initial={{ x: -30, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex group"
+    <div 
+      className={`flex group animate-fade-in-left`}
+      style={{ animationDelay: `${index * 0.1}s` }}
     >
       <div className="mr-6">
         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 shadow-lg shadow-primary/20 flex items-center justify-center text-white text-xl font-bold transform group-hover:scale-110 transition-transform">
@@ -129,7 +121,7 @@ const AdvantageItem = ({ title, description, index }: AdvantageItemProps) => {
         <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{title}</h3>
         <p className="text-muted-foreground text-lg">{description}</p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -141,19 +133,15 @@ interface FeatureBoxProps {
 
 const FeatureBox = ({ icon, title, description }: FeatureBoxProps) => {
   return (
-    <motion.div 
-      initial={{ y: 20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 group hover:border-primary/20 transition-colors card-hover"
+    <div 
+      className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 group hover:border-primary/20 transition-colors card-hover animate-fade-in-up"
     >
       <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary group-hover:text-white transition-colors">
         <Icon name={icon} className="h-8 w-8" />
       </div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
-    </motion.div>
+    </div>
   );
 };
 

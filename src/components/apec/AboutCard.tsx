@@ -1,7 +1,6 @@
 
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
-import { motion } from "framer-motion";
 
 const AboutCard = () => {
   return (
@@ -100,12 +99,9 @@ const FeatureCard = ({ icon, color, title, description, delay }: FeatureCardProp
   };
   
   return (
-    <motion.div 
-      initial={{ y: 20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="relative group card-hover"
+    <div 
+      className={`relative group card-hover animate-fade-in-up`}
+      style={{ animationDelay: `${delay}s` }}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-xl"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -116,7 +112,7 @@ const FeatureCard = ({ icon, color, title, description, delay }: FeatureCardProp
         <h3 className="text-xl font-bold mb-3">{title}</h3>
         <p className="text-muted-foreground">{description}</p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

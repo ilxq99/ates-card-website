@@ -4,7 +4,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
-import { motion } from "framer-motion";
 
 // Импортируем типы для стран
 interface Country {
@@ -154,10 +153,9 @@ interface CountryCardProps {
 
 const CountryCard = ({ country, index }: CountryCardProps) => {
   return (
-    <motion.div
-      initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
+    <div
+      className={`animate-fade-in-up`}
+      style={{ animationDelay: `${index * 0.05}s` }}
     >
       <Card className={`h-full hover:shadow-lg transition-shadow group overflow-hidden ${country.featured ? 'border-primary/30 bg-primary/5' : 'bg-white'}`}>
         <CardHeader className="pb-2 relative overflow-hidden">
@@ -190,7 +188,7 @@ const CountryCard = ({ country, index }: CountryCardProps) => {
           </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 };
 
