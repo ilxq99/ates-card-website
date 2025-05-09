@@ -1,0 +1,101 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Главная страница -->
+  <url>
+    <loc>https://ваш-сайт.ru/</loc>
+    <lastmod>2025-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Страница о нас -->
+  <url>
+    <loc>https://ваш-сайт.ru/about</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Страница с услугами -->
+  <url>
+    <loc>https://ваш-сайт.ru/services</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Детальная страница услуги - Карта АТЭС -->
+  <url>
+    <loc>https://ваш-сайт.ru/services/apec</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Контакты -->
+  <url>
+    <loc>https://ваш-сайт.ru/contacts</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Страница с тарифами -->
+  <url>
+    <loc>https://ваш-сайт.ru/pricing</loc>
+    <lastmod>2025-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Страница с информацией о странах АТЭС -->
+  <url>
+    <loc>https://ваш-сайт.ru/countries</loc>
+    <lastmod>2025-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Блог -->
+  <url>
+    <loc>https://ваш-сайт.ru/blog</loc>
+    <lastmod>2025-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Примеры статей блога -->
+  <url>
+    <loc>https://ваш-сайт.ru/blog/benefits-of-apec-card</loc>
+    <lastmod>2025-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ваш-сайт.ru/blog/business-travel-to-asia</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Страница политики конфиденциальности -->
+  <url>
+    <loc>https://ваш-сайт.ru/privacy</loc>
+    <lastmod>2025-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Условия использования -->
+  <url>
+    <loc>https://ваш-сайт.ru/terms</loc>
+    <lastmod>2025-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
