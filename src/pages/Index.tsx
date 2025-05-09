@@ -68,8 +68,6 @@ const Index = () => {
       <div className="min-h-screen bg-white">
         <Header />
         <main>
-          {" "}
-          {/* Семантический тег для основного содержимого */}
           <Hero />
           <AboutCard />
           <Advantages />
