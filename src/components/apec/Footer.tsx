@@ -1,79 +1,321 @@
 
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Input } from "@/components/ui/input";
 import Icon from "@/components/ui/icon";
+import { useState } from "react";
+
+// Тип для ссылки футера
+interface FooterLink {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+}
+
+// Тип для соцсети
+interface SocialLink {
+  name: string;
+  icon: string;
+  href: string;
+  color: string;
+}
+
+// Тип для колонки футера
+interface FooterColumn {
+  title: string;
+  links: FooterLink[];
+}
+
+// Данные для соцсетей
+const socialLinks: SocialLink[] = [
+  { 
+    name: "Telegram", 
+    icon: "Send", 
+    href: "https://t.me/atec_card", 
+    color: "bg-blue-500 hover:bg-blue-600" 
+  },
+  { 
+    name: "WhatsApp", 
+    icon: "MessageCircle", 
+    href: "https://wa.me/79991234567", 
+    color: "bg-green-500 hover:bg-green-600" 
+  },
+  { 
+    name: "LinkedIn", 
+    icon: "Linkedin", 
+    href: "https://linkedin.com/company/atec-card", 
+    color: "bg-blue-700 hover:bg-blue-800" 
+  },
+  { 
+    name: "Instagram", 
+    icon: "Instagram", 
+    href: "https://instagram.com/atec_card", 
+    color: "bg-pink-600 hover:bg-pink-700" 
+  }
+];
+
+// Данные для колонок футера
+const footerColumns: FooterColumn[] = [
+  {
+    title: "Компания",
+    links: [
+      { label: "О нас", href: "/about" },
+      { label: "Наша команда", href: "/team" },
+      { label: "Карьера", href: "/careers" },
+      { label: "Контакты", href: "/contacts" }
+    ]
+  },
+  {
+    title: "Услуги",
+    links: [
+      { label: "Карта АТЭС", href: "/services/apec" },
+      { label: "Консультации", href: "/services/consultations" },
+      { label: "Визовая поддержка", href: "/services/visa-support" },
+      { label: "Юридическое сопровождение", href: "/services/legal" }
+    ]
+  },
+  {
+    title: "Информация",
+    links: [
+      { label: "Страны АТЭС", href: "/countries" },
+      { label: "Процесс оформления", href: "/process" },
+      { label: "Тарифы", href: "/pricing" },
+      { label: "Вопросы и ответы", href: "/faq" }
+    ]
+  },
+  {
+    title: "Правовая информация",
+    links: [
+      { label: "Политика конфиденциальности", href: "/privacy" },
+      { label: "Условия использования", href: "/terms" },
+      { label: "Договор оферты", href: "/offer" },
+      { label: "Проверка статуса заявки", href: "/check-status" }
+    ]
+  }
+];
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  
+  // Обработчик подписки на рассылку
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      // Здесь можно добавить логику отправки email на сервер
+      setTimeout(() => {
+        setEmail("");
+        // Можно добавить состояние успешной подписки
+      }, 500);
+    }
+  };
+  
+  const currentYear = new Date().getFullYear();
+  
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-bold mb-4">АТЭС карта</h3>
-            <p className="text-gray-400">Профессиональное оформление визазаменяющих карт АТЭС для представителей бизнеса</p>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-bold mb-4">Услуги</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Оформление карты АТЭС</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Продление карты</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Консультации</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Юридическая поддержка</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-bold mb-4">Информация</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">О нас</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Страны АТЭС</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Блог</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-bold mb-4">Контакты</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center text-gray-400">
-                <Icon name="MapPin" className="h-5 w-5 mr-2" />
-                <span>Москва, ул. Тверская, д. 1, офис 150</span>
-              </li>
-              <li className="flex items-center text-gray-400">
-                <Icon name="Phone" className="h-5 w-5 mr-2" />
-                <span>+7 (495) 123-45-67</span>
-              </li>
-              <li className="flex items-center text-gray-400">
-                <Icon name="Mail" className="h-5 w-5 mr-2" />
-                <span>info@ates-card.ru</span>
-              </li>
-            </ul>
-            <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Icon name="Telegram" className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Icon name="MessageCircle" className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Icon name="Linkedin" className="h-6 w-6" />
-              </a>
+    <footer className="bg-slate-900 text-white relative overflow-hidden">
+      {/* Декоративные элементы */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl opacity-20"></div>
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-accent/10 rounded-full blur-3xl opacity-20"></div>
+      
+      {/* Верхняя часть футера */}
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+          {/* Информация о компании */}
+          <div className="md:col-span-2">
+            <div className="flex items-center mb-6">
+              <div className="bg-gradient-to-r from-primary to-secondary h-10 w-10 rounded-lg flex items-center justify-center mr-3 shadow-sm">
+                <span className="text-white font-bold text-lg">A</span>
+              </div>
+              <div>
+                <span className="text-2xl font-bold text-white">АТЭС</span>
+                <span className="text-2xl ml-1 text-slate-400">карта</span>
+              </div>
             </div>
+            
+            <p className="text-slate-400 mb-8 max-w-md">
+              Профессиональное сопровождение в оформлении карт АТЭС для предпринимателей и бизнесменов с 2012 года. Более 2000 успешно оформленных карт.
+            </p>
+            
+            {/* Форма подписки */}
+            <div className="mb-6">
+              <h3 className="text-lg font-medium mb-4">Будьте в курсе новостей</h3>
+              {subscribed ? (
+                <div className="bg-green-900/30 border border-green-800 rounded-lg p-4 text-center">
+                  <Icon name="CheckCircle" className="h-6 w-6 text-green-500 mb-2 mx-auto" />
+                  <p className="text-green-200">
+                    Спасибо за подписку! Мы отправили вам письмо для подтверждения.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="flex space-x-2">
+                  <div className="flex-grow">
+                    <Input
+                      type="email"
+                      placeholder="Ваш email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="bg-slate-800 border-slate-700 text-white h-11"
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="bg-primary hover:bg-primary/90 h-11">
+                    Подписаться
+                  </Button>
+                </form>
+              )}
+            </div>
+            
+            {/* Социальные сети */}
+            <div>
+              <h3 className="text-lg font-medium mb-4">Мы в соцсетях</h3>
+              <div className="flex space-x-3">
+                {socialLinks.map((social) => (
+                  <SocialButton
+                    key={social.name}
+                    icon={social.icon}
+                    href={social.href} 
+                    color={social.color}
+                    label={social.name}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Колонки с ссылками */}
+          {footerColumns.map((column, index) => (
+            <div key={index} className="space-y-4">
+              <h3 className="text-lg font-medium">{column.title}</h3>
+              <ul className="space-y-3">
+                {column.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <a 
+                      href={link.href} 
+                      className="text-slate-400 hover:text-white transition-colors flex items-center"
+                      target={link.isExternal ? "_blank" : undefined}
+                      rel={link.isExternal ? "noopener noreferrer" : undefined}
+                    >
+                      <Icon name="ChevronRight" className="h-4 w-4 mr-1 text-primary" />
+                      {link.label}
+                      {link.isExternal && (
+                        <Icon name="ExternalLink" className="h-3 w-3 ml-1 text-slate-500" />
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        
+        {/* Контактная информация */}
+        <div className="mt-16 pt-6 border-t border-slate-800">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ContactItem
+              icon="MapPin"
+              title="Адрес"
+              details={[
+                "123456, Москва",
+                "ул. Тверская, д. 1, офис 150"
+              ]}
+            />
+            
+            <ContactItem
+              icon="Phone"
+              title="Телефоны"
+              details={[
+                "+7 (495) 123-45-67",
+                "+7 (495) 765-43-21"
+              ]}
+            />
+            
+            <ContactItem
+              icon="Mail"
+              title="Email"
+              details={[
+                "info@atec-card.ru",
+                "support@atec-card.ru"
+              ]}
+            />
           </div>
         </div>
         
-        <Separator className="my-8 bg-gray-800" />
+        <Separator className="my-8 bg-slate-800" />
         
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2025 ATEC card. Все права защищены.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Политика конфиденциальности</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Условия использования</a>
+        {/* Нижняя часть футера */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+          <div className="mb-4 md:mb-0 text-center md:text-left">
+            © 2012-{currentYear} ООО "АТЭС Карт". Все права защищены.
           </div>
+          
+          <div className="flex flex-wrap justify-center gap-6">
+            <a href="/policy" className="hover:text-white transition-colors">
+              Политика конфиденциальности
+            </a>
+            <a href="/terms" className="hover:text-white transition-colors">
+              Пользовательское соглашение
+            </a>
+            <a href="/sitemap" className="hover:text-white transition-colors">
+              Карта сайта
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      {/* Полоска копирайта */}
+      <div className="bg-slate-950 py-3 text-center text-xs text-slate-600 relative z-10">
+        <div className="container mx-auto px-4">
+          Разработано с ❤️ в России | Сайт использует cookies
         </div>
       </div>
     </footer>
   );
 };
+
+// Компонент кнопки социальной сети
+interface SocialButtonProps {
+  icon: string;
+  href: string;
+  color: string;
+  label: string;
+}
+
+const SocialButton = ({ icon, href, color, label }: SocialButtonProps) => (
+  <a 
+    href={href} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className={`${color} w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110`}
+    title={label}
+  >
+    <Icon name={icon} className="h-5 w-5 text-white" />
+    <span className="sr-only">{label}</span>
+  </a>
+);
+
+// Компонент контактной информации
+interface ContactItemProps {
+  icon: string;
+  title: string;
+  details: string[];
+}
+
+const ContactItem = ({ icon, title, details }: ContactItemProps) => (
+  <div className="flex">
+    <div className="mr-4">
+      <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center">
+        <Icon name={icon} className="h-6 w-6 text-primary" />
+      </div>
+    </div>
+    <div>
+      <h3 className="text-white font-medium mb-2">{title}</h3>
+      {details.map((detail, index) => (
+        <p key={index} className="text-slate-400">{detail}</p>
+      ))}
+    </div>
+  </div>
+);
 
 export default Footer;

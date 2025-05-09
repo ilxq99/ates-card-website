@@ -6,6 +6,7 @@ import CountriesTabs from "@/components/apec/CountriesTabs";
 import ApplicationProcess from "@/components/apec/ApplicationProcess";
 import PricingPlans from "@/components/apec/PricingPlans";
 import ApplicationForm from "@/components/apec/ApplicationForm";
+import Testimonials from "@/components/apec/Testimonials";
 import FAQ from "@/components/apec/FAQ";
 import Footer from "@/components/apec/Footer";
 
@@ -19,6 +20,7 @@ const Index = () => {
       <CountriesTabs />
       <ApplicationProcess />
       <PricingPlans />
+      <Testimonials />
       <ApplicationForm />
       <FAQ />
       <Footer />
