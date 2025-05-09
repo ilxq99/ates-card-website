@@ -24,7 +24,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#9b87f5",
+          DEFAULT: "#4F46E5", // Более деловой синий для карт АТЭС
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
