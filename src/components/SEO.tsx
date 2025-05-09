@@ -1,5 +1,5 @@
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title?: string;
@@ -14,7 +14,7 @@ interface SEOProps {
 
 /**
  * Компонент для управления SEO-метаданными страниц
- * Использует react-helmet для вставки мета-тегов
+ * Использует react-helmet-async для вставки мета-тегов
  */
 const SEO = ({
   title = 'Оформление карты АТЭС (APEC) для бизнеса | Безвизовый въезд в 21 страну',
