@@ -16,15 +16,16 @@ const faqData: FAQItem[] = [
   {
     id: 1,
     question: "Что такое АТЭС?",
-    answer: "Азиатско-Тихоокеанское экономическое сотрудничество (АТЭС) — это межправительственный форум для 21 экономики в Тихоокеанском регионе, который способствует свободной торговле в Азиатско-Тихоокеанском регионе.",
-    category: "general"
+    answer:
+      "Азиатско-Тихоокеанское экономическое сотрудничество (АТЭС) — это межправительственный форум для 21 экономики в Тихоокеанском регионе, который способствует свободной торговле в Азиатско-Тихоокеанском регионе.",
+    category: "general",
   },
   {
     id: 2,
     question: "Когда состоится саммит АТЭС 2024?",
     answer: "Саммит АТЭС 2024 пройдёт в ноябре 2024 года в Лиме, Перу.",
-    category: "general"
-  }
+    category: "general",
+  },
 ];
 
 const FAQ = () => {
@@ -91,9 +92,19 @@ const FAQSearch = SearchBar;
 const FAQCategories = CategoryTabs;
 
 // Компонент поиска
-const SearchBar = ({ value, onChange }: { value: string; onChange: (value: string) => void }) => (
+const SearchBar = ({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+}) => (
   <div className="relative mb-6">
-    <Icon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+    <Icon
+      name="Search"
+      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+      size={20}
+    />
     <input
       type="text"
       placeholder="Поиск по вопросам..."
@@ -105,11 +116,15 @@ const SearchBar = ({ value, onChange }: { value: string; onChange: (value: strin
 );
 
 // FAQ данные
-        <Icon name="X" className="h-5 w-5" />
-      </button>
-    )}
-  </div>
-);
+const faqData: FAQItem[] = [
+  {
+    id: 1,
+    category: "general",
+    question: "Что такое АТЭС?",
+    answer:
+      "Азиатско-Тихоокеанское экономическое сотрудничество (АТЭС) — это межправительственный форум для 21 экономики в Тихоокеанском регионе, который способствует свободной торговле по всему Азиатско-Тихоокеанскому региону.",
+  },
+];
 
 // Табы категорий
 interface CategoryTabsProps {
