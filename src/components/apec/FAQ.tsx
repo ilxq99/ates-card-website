@@ -1,10 +1,13 @@
-import { Accordion } from "@/components/ui/accordion";
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
-import { useFAQ } from "@/hooks/useFAQ";
-import FAQItem from "./faq/FAQItem";
-import FAQSearch from "./faq/FAQSearch";
-import FAQCategories from "./faq/FAQCategories";
 
 const FAQ = () => {
   const {
