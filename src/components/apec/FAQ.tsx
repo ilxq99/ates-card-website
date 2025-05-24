@@ -12,6 +12,15 @@ import { useFAQ } from "@/hooks/useFAQ";
 import type { FAQCategory, FAQItem } from "@/types/faq";
 import { CATEGORIES } from "@/data/faqData";
 
+const faqData: FAQItem[] = [
+  {
+    id: 1,
+    question: "Что такое АТЭС и для чего это нужно?",
+    answer: "АТЭС (Азиатско-Тихоокеанское экономическое сотрудничество) — это международная организация, объединяющая 21 экономику региона для развития торговли и экономического сотрудничества.",
+    category: "general"
+  }
+];
+
 const FAQ = () => {
   const {
     activeCategory,
