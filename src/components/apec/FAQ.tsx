@@ -8,6 +8,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
+import { useFAQ } from "@/hooks/useFAQ";
+import type { FAQCategory, FAQItem } from "@/types/faq";
+import { CATEGORIES } from "@/data/faqData";
 
 const FAQ = () => {
   const {
@@ -68,6 +71,9 @@ const SectionHeader = () => (
     </p>
   </div>
 );
+
+const FAQSearch = SearchBar;
+const FAQCategories = CategoryTabs;
 
 // Строка поиска
 interface SearchBarProps {
